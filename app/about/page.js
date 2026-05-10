@@ -16,7 +16,7 @@ const values = [
 const stats = [
   { value: '48HR', label: 'Average Site Delivery' },
   { value: '100%', label: 'Client Ownership of Every Site' },
-  { value: '∞', label: 'Revision Rounds During Demo Process' },
+  { value: '∞', label: 'Revision Rounds During Demo Process', font: "'Georgia', serif" },
 ]
 
 const label = { fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: '14px', letterSpacing: '4px', textTransform: 'uppercase', color: '#FF6B1A', marginBottom: '20px' }
@@ -143,7 +143,7 @@ export default function About() {
           <div className="grid-3col">
             {stats.map((s) => (
               <div key={s.label} style={{ background: '#080810', padding: '40px 24px', textAlign: 'center' }}>
-                <div style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 'clamp(40px, 5vw, 64px)', letterSpacing: '3px', color: '#F5E03A', lineHeight: 1, marginBottom: '10px' }}>
+                <div style={{ fontFamily: s.font || "'Bebas Neue', sans-serif", fontSize: 'clamp(40px, 5vw, 64px)', letterSpacing: '3px', color: '#F5E03A', lineHeight: 1, marginBottom: '10px' }}>
                   {s.value}
                 </div>
                 <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 300, fontSize: '12px', letterSpacing: '3px', textTransform: 'uppercase', color: '#8A8A9A' }}>

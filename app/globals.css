@@ -85,7 +85,7 @@ body {
 
   .hide-mobile        { display: none !important; }
   .trust-bar--desktop { display: none !important; }
-  .trust-bar--mobile  { display: flex !important; gap: 24px; justify-content: flex-start; animation: trust-marquee 22s linear infinite; }
+  .trust-bar--mobile  { display: flex !important; gap: 24px; justify-content: flex-start; animation: trust-marquee 22s linear infinite; width: max-content; padding-left: 0 !important; padding-right: 0 !important; }
 
   /* Make all max-width containers full width on mobile */
   .inner       { padding-left: 20px !important; padding-right: 20px !important; }
