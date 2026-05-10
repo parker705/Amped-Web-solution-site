@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --color-electric: #F5E03A;
+  --color-volt: #FF6B1A;
+  --color-blackout: #080810;
+  --color-charcoal: #13131F;
+  --color-dark: #1C1C2E;
+  --color-bone: #F0EEE6;
+  --color-storm: #8A8A9A;
+  --color-ltgray: #C4C4D4;
+
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-condensed: 'Barlow Condensed', sans-serif;
+  --font-body: 'Barlow', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #080810;
+  color: #F0EEE6;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Responsive layout helpers ── */
+.grid-hero    { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; width: 100%; }
+.grid-2col    { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.grid-story   { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start; }
+.grid-form    { display: grid; grid-template-columns: 2fr 1fr; gap: 80px; align-items: start; }
+.grid-3col    { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+.form-row     { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+/* ── Button shadows ── */
+.btn-primary  { box-shadow: 5px 5px 0px rgba(0,0,0,0.5); transition: box-shadow 0.15s ease, transform 0.15s ease; }
+.btn-primary:hover { box-shadow: 2px 2px 0px rgba(0,0,0,0.5); transform: translate(3px, 3px); }
+.btn-outline  { box-shadow: 5px 5px 0px rgba(245,224,58,0.2); transition: box-shadow 0.15s ease, transform 0.15s ease; }
+.btn-outline:hover { box-shadow: 2px 2px 0px rgba(245,224,58,0.2); transform: translate(3px, 3px); }
+.btn-dark     { box-shadow: 5px 5px 0px rgba(0,0,0,0.3); transition: box-shadow 0.15s ease, transform 0.15s ease; }
+.btn-dark:hover { box-shadow: 2px 2px 0px rgba(0,0,0,0.3); transform: translate(3px, 3px); }
+
+/* ── Section padding responsive ── */
+.section-lg   { padding: 120px 24px; }
+.section-md   { padding: 100px 24px; }
+.section-sm   { padding: 80px 24px; }
+
+/* ── Trust bar ── */
+.trust-bar    { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: nowrap; padding: 18px 24px; overflow: hidden; }
+.trust-sep    { color: rgba(245,224,58,0.3); }
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .grid-hero, .grid-2col, .grid-story, .grid-form {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  .grid-3col {
+    grid-template-columns: 1fr !important;
+    gap: 2px !important;
+  }
+  .form-row {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  .section-lg { padding: 72px 20px; }
+  .section-md { padding: 64px 20px; }
+  .section-sm { padding: 48px 20px; }
+
+  /* Hide hero right column visual on very small screens */
+  .hero-visual { display: none; }
+
+  /* Trust bar on mobile — smaller text, tighter gap */
+  .trust-bar   { gap: 16px; }
+  .trust-sep   { display: none; }
+
+  /* Make all max-width containers full width on mobile */
+  .inner       { padding-left: 20px !important; padding-right: 20px !important; }
+}
