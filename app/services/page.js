@@ -362,7 +362,7 @@ export default function Services() {
           <div className="grid-2col">
 
             {/* Left — browser mockup */}
-            <div style={{ paddingTop: '8px' }}>
+            <div className="hide-mobile" style={{ paddingTop: '8px' }}>
               <BrowserMockup />
             </div>
 
@@ -446,7 +446,7 @@ export default function Services() {
             </div>
 
             {/* Right — phone mockup */}
-            <div style={{ paddingTop: '8px' }}>
+            <div className="hide-mobile" style={{ paddingTop: '8px' }}>
               <PhoneMockup />
             </div>
           </div>

@@ -106,8 +106,20 @@ export default function BoltSpin3D({ size = 320 }) {
       raf = requestAnimationFrame(frame)
     }
 
+    function handleVisibility() {
+      if (document.hidden) {
+        cancelAnimationFrame(raf)
+      } else {
+        frame()
+      }
+    }
+    document.addEventListener('visibilitychange', handleVisibility)
+
     frame()
-    return () => cancelAnimationFrame(raf)
+    return () => {
+      cancelAnimationFrame(raf)
+      document.removeEventListener('visibilitychange', handleVisibility)
+    }
   }, [size])
 
   return <canvas ref={ref} />

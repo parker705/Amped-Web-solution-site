@@ -54,6 +54,14 @@ body {
 .trust-bar    { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: nowrap; padding: 18px 24px; overflow: hidden; }
 .trust-sep    { color: rgba(245,224,58,0.3); }
 
+.trust-bar--desktop { display: flex; }
+.trust-bar--mobile  { display: none; }
+
+@keyframes trust-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
 /* ── Mobile ── */
 @media (max-width: 768px) {
   .grid-hero, .grid-2col, .grid-story, .grid-form {
@@ -62,7 +70,7 @@ body {
   }
   .grid-3col {
     grid-template-columns: 1fr !important;
-    gap: 2px !important;
+    gap: 24px !important;
   }
   .form-row {
     grid-template-columns: 1fr !important;
@@ -75,9 +83,9 @@ body {
   /* Hide hero right column visual on very small screens */
   .hero-visual { display: none; }
 
-  /* Trust bar on mobile — smaller text, tighter gap */
-  .trust-bar   { gap: 16px; }
-  .trust-sep   { display: none; }
+  .hide-mobile        { display: none !important; }
+  .trust-bar--desktop { display: none !important; }
+  .trust-bar--mobile  { display: flex !important; gap: 24px; justify-content: flex-start; animation: trust-marquee 22s linear infinite; }
 
   /* Make all max-width containers full width on mobile */
   .inner       { padding-left: 20px !important; padding-right: 20px !important; }

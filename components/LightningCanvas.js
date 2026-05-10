@@ -106,10 +106,24 @@ export default function LightningCanvas() {
     }
     draw()
 
+    function handleVisibility() {
+      if (document.hidden) {
+        running = false
+        cancelAnimationFrame(raf)
+        strikes.length = 0
+      } else {
+        running = true
+        schedule()
+        draw()
+      }
+    }
+    document.addEventListener('visibilitychange', handleVisibility)
+
     return () => {
       running = false
       cancelAnimationFrame(raf)
       ro.disconnect()
+      document.removeEventListener('visibilitychange', handleVisibility)
     }
   }, [])
 

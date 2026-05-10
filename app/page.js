@@ -73,13 +73,24 @@ export default function Home() {
         </div>
 
         {/* Trust bar */}
-        <div style={{ borderTop: '1px solid rgba(245,224,58,0.12)', position: 'relative', zIndex: 2 }}>
-          <div className="trust-bar" style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        <div style={{ borderTop: '1px solid rgba(245,224,58,0.12)', position: 'relative', zIndex: 2, overflow: 'hidden' }}>
+          {/* Desktop */}
+          <div className="trust-bar trust-bar--desktop" style={{ maxWidth: '1200px', margin: '0 auto' }}>
             {trustItems.map((item, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <span style={{ fontSize: '14px' }}>{item.icon}</span>
                 <span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: '13px', letterSpacing: '2px', textTransform: 'uppercase', color: '#C4C4D4', whiteSpace: 'nowrap' }}>{item.text}</span>
                 {i < trustItems.length - 1 && <span className="trust-sep" style={{ marginLeft: '8px' }}>·</span>}
+              </div>
+            ))}
+          </div>
+          {/* Mobile scrolling ticker — items duplicated for seamless loop */}
+          <div className="trust-bar trust-bar--mobile">
+            {[...trustItems, ...trustItems].map((item, i) => (
+              <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}>
+                <span style={{ fontSize: '14px' }}>{item.icon}</span>
+                <span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: '13px', letterSpacing: '2px', textTransform: 'uppercase', color: '#C4C4D4', whiteSpace: 'nowrap' }}>{item.text}</span>
+                <span style={{ color: 'rgba(245,224,58,0.3)', marginLeft: '8px' }}>·</span>
               </div>
             ))}
           </div>
