@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useForm, ValidationError } from '@formspree/react'
 import BoltIcon from '@/components/BoltIcon'
 
 const nextSteps = [
@@ -11,17 +11,7 @@ const nextSteps = [
 const label = { fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: '14px', letterSpacing: '4px', textTransform: 'uppercase', color: '#FF6B1A', marginBottom: '20px' }
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: '', business: '', phone: '', email: '', website: '', service: '', message: '' })
-  const [submitted, setSubmitted] = useState(false)
-
-  function handleChange(e) {
-    setForm(f => ({ ...f, [e.target.name]: e.target.value }))
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault()
-    setSubmitted(true)
-  }
+  const [state, handleSubmit] = useForm('xpqbognr')
 
   const inputStyle = {
     width: '100%',
@@ -60,7 +50,7 @@ export default function Contact() {
             <div>
               <div style={label}>Get In Touch</div>
 
-              {submitted ? (
+              {state.succeeded ? (
                 <div style={{ background: '#080810', border: '1px solid rgba(245,224,58,0.3)', padding: '48px 40px', textAlign: 'center' }}>
                   <BoltIcon size={40} />
                   <h3 style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '40px', letterSpacing: '2px', color: '#F5E03A', marginTop: '20px', marginBottom: '12px' }}>
@@ -75,49 +65,50 @@ export default function Contact() {
                   <div className="form-row">
                     <div>
                       <label style={{ display: 'block', fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: '12px', letterSpacing: '3px', textTransform: 'uppercase', color: '#8A8A9A', marginBottom: '8px' }}>Full Name *</label>
-                      <input required name="name" value={form.name} onChange={handleChange} placeholder="Your full name" style={inputStyle} />
+                      <input required name="name" placeholder="Your full name" style={inputStyle} />
                     </div>
                     <div>
                       <label style={{ display: 'block', fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: '12px', letterSpacing: '3px', textTransform: 'uppercase', color: '#8A8A9A', marginBottom: '8px' }}>Business Name *</label>
-                      <input required name="business" value={form.business} onChange={handleChange} placeholder="Your business name" style={inputStyle} />
+                      <input required name="business" placeholder="Your business name" style={inputStyle} />
                     </div>
                   </div>
 
                   <div className="form-row">
                     <div>
                       <label style={{ display: 'block', fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: '12px', letterSpacing: '3px', textTransform: 'uppercase', color: '#8A8A9A', marginBottom: '8px' }}>Phone Number *</label>
-                      <input required name="phone" value={form.phone} onChange={handleChange} placeholder="(850) 000-0000" style={inputStyle} />
+                      <input required name="phone" placeholder="(555) 000-0000" style={inputStyle} />
                     </div>
                     <div>
                       <label style={{ display: 'block', fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: '12px', letterSpacing: '3px', textTransform: 'uppercase', color: '#8A8A9A', marginBottom: '8px' }}>Email Address *</label>
-                      <input required type="email" name="email" value={form.email} onChange={handleChange} placeholder="you@yourbusiness.com" style={inputStyle} />
+                      <input required type="email" name="email" placeholder="you@yourbusiness.com" style={inputStyle} />
+                      <ValidationError field="email" errors={state.errors} style={{ fontFamily: "'Barlow', sans-serif", fontSize: '12px', color: '#FF6B1A', marginTop: '6px', display: 'block' }} />
                     </div>
                   </div>
 
                   <div>
                     <label style={{ display: 'block', fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: '12px', letterSpacing: '3px', textTransform: 'uppercase', color: '#8A8A9A', marginBottom: '8px' }}>Current Website (optional)</label>
-                    <input name="website" value={form.website} onChange={handleChange} placeholder="https://yourwebsite.com" style={inputStyle} />
+                    <input name="website" placeholder="https://yourwebsite.com" style={inputStyle} />
                   </div>
 
                   <div>
                     <label style={{ display: 'block', fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: '12px', letterSpacing: '3px', textTransform: 'uppercase', color: '#8A8A9A', marginBottom: '8px' }}>I'm Interested In *</label>
-                    <select required name="service" value={form.service} onChange={handleChange} style={{ ...inputStyle, cursor: 'pointer' }}>
+                    <select required name="service" defaultValue="" style={{ ...inputStyle, cursor: 'pointer' }}>
                       <option value="" disabled>Select a service</option>
-                      <option value="web">Web Design</option>
-                      <option value="ads">Facebook Advertising</option>
-                      <option value="both">Both</option>
-                      <option value="unsure">Not Sure Yet</option>
+                      <option value="Web Design">Web Design</option>
+                      <option value="Facebook Advertising">Facebook Advertising</option>
+                      <option value="Both">Both</option>
+                      <option value="Not Sure Yet">Not Sure Yet</option>
                     </select>
                   </div>
 
                   <div>
                     <label style={{ display: 'block', fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: '12px', letterSpacing: '3px', textTransform: 'uppercase', color: '#8A8A9A', marginBottom: '8px' }}>Tell Us About Your Business</label>
-                    <textarea name="message" value={form.message} onChange={handleChange} rows={5} placeholder="What you do, where you're located, what you're looking for..." style={{ ...inputStyle, resize: 'vertical' }} />
+                    <textarea name="message" rows={5} placeholder="What you do, where you're located, what you're looking for..." style={{ ...inputStyle, resize: 'vertical' }} />
                   </div>
 
                   <div>
-                    <button type="submit" className="btn-primary" style={{ background: '#F5E03A', color: '#080810', fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: '13px', letterSpacing: '3px', textTransform: 'uppercase', padding: '18px 48px', border: 'none', cursor: 'pointer', display: 'inline-block' }}>
-                      Send My Request →
+                    <button type="submit" disabled={state.submitting} className="btn-primary" style={{ background: '#F5E03A', color: '#080810', fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: '15px', letterSpacing: '3px', textTransform: 'uppercase', padding: '18px 48px', border: 'none', cursor: state.submitting ? 'not-allowed' : 'pointer', display: 'inline-block', opacity: state.submitting ? 0.7 : 1 }}>
+                      {state.submitting ? 'Sending...' : 'Send My Request →'}
                     </button>
                     <p style={{ fontFamily: "'Barlow', sans-serif", fontWeight: 300, fontSize: '12px', color: '#8A8A9A', marginTop: '16px' }}>
                       We respond to every inquiry within 24 hours. Most projects begin within days of your first call.
@@ -140,14 +131,14 @@ export default function Contact() {
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                     <span style={{ fontSize: '14px' }}>📧</span>
-                    <a href="mailto:hello@ampedwebsolutions.com" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: '14px', letterSpacing: '1px', color: '#F5E03A', textDecoration: 'none' }}>
-                      hello@ampedwebsolutions.com
+                    <a href="mailto:ampedwebsolutions@gmail.com" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: '14px', letterSpacing: '1px', color: '#F5E03A', textDecoration: 'none' }}>
+                      ampedwebsolutions@gmail.com
                     </a>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                     <span style={{ fontSize: '14px' }}>📞</span>
-                    <a href="tel:8500000000" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: '14px', letterSpacing: '1px', color: '#F5E03A', textDecoration: 'none' }}>
-                      (850) 000-0000
+                    <a href="tel:5616575518" style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: '14px', letterSpacing: '1px', color: '#F5E03A', textDecoration: 'none' }}>
+                      (561) 657-5518
                     </a>
                   </div>
                 </div>

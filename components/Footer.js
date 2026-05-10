@@ -35,7 +35,7 @@ export default function Footer() {
             <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 600, fontSize: '11px', letterSpacing: '4px', textTransform: 'uppercase', color: '#FF6B1A', marginBottom: '20px' }}>Contact</div>
             <p style={{ fontFamily: "'Barlow', sans-serif", fontWeight: 300, fontSize: '13px', color: '#C4C4D4', lineHeight: 1.8 }}>
               Tallahassee, FL<br />
-              <a href="mailto:hello@ampedwebsolutions.com" style={{ color: '#F5E03A', textDecoration: 'none' }}>hello@ampedwebsolutions.com</a>
+              <a href="mailto:ampedwebsolutions@gmail.com" style={{ color: '#F5E03A', textDecoration: 'none' }}>ampedwebsolutions@gmail.com</a>
             </p>
           </div>
         </div>

@@ -392,7 +392,7 @@ export default function Services() {
                 ))}
               </div>
 
-              <Link href="/contact" className="btn-primary" style={{ background: '#F5E03A', color: '#080810', fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: '13px', letterSpacing: '3px', textTransform: 'uppercase', padding: '16px 36px', textDecoration: 'none', display: 'inline-block' }}>
+              <Link href="/contact" className="btn-primary" style={{ background: '#F5E03A', color: '#080810', fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: '15px', letterSpacing: '3px', textTransform: 'uppercase', padding: '16px 36px', textDecoration: 'none', display: 'inline-block' }}>
                 Get Your Custom Quote
               </Link>
             </div>
@@ -440,7 +440,7 @@ export default function Services() {
                 ))}
               </div>
 
-              <Link href="/contact" className="btn-primary" style={{ background: '#FF6B1A', color: '#F0EEE6', fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: '13px', letterSpacing: '3px', textTransform: 'uppercase', padding: '16px 36px', textDecoration: 'none', display: 'inline-block' }}>
+              <Link href="/contact" className="btn-primary" style={{ background: '#FF6B1A', color: '#F0EEE6', fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: '15px', letterSpacing: '3px', textTransform: 'uppercase', padding: '16px 36px', textDecoration: 'none', display: 'inline-block' }}>
                 Get Your Custom Quote
               </Link>
             </div>
@@ -463,7 +463,7 @@ export default function Services() {
           <p style={{ fontFamily: "'Barlow', sans-serif", fontWeight: 300, fontSize: '16px', color: '#8A8A9A', lineHeight: 1.7, marginBottom: '40px' }}>
             We don't quote blindly. We don't build generically. Every project at Amped starts with a discovery call so we understand exactly what your business needs before we recommend anything.
           </p>
-          <Link href="/contact" className="btn-primary" style={{ background: '#F5E03A', color: '#080810', fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: '13px', letterSpacing: '3px', textTransform: 'uppercase', padding: '16px 40px', textDecoration: 'none', display: 'inline-block' }}>
+          <Link href="/contact" className="btn-primary" style={{ background: '#F5E03A', color: '#080810', fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: '15px', letterSpacing: '3px', textTransform: 'uppercase', padding: '16px 40px', textDecoration: 'none', display: 'inline-block' }}>
             Book Your Discovery Call
           </Link>
         </div>

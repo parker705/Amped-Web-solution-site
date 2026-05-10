@@ -55,10 +55,10 @@ export default function Home() {
                 The Tallahassee web design studio that shows you the finished product before any contracts are signed.
               </p>
               <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-                <Link href="/contact" className="btn-primary" style={{ background: '#F5E03A', color: '#080810', fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: '13px', letterSpacing: '3px', textTransform: 'uppercase', padding: '16px 32px', textDecoration: 'none', display: 'inline-block' }}>
+                <Link href="/contact" className="btn-primary" style={{ background: '#F5E03A', color: '#080810', fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: '15px', letterSpacing: '3px', textTransform: 'uppercase', padding: '16px 32px', textDecoration: 'none', display: 'inline-block' }}>
                   Get Your Free Demo
                 </Link>
-                <Link href="/services" className="btn-outline" style={{ border: '1.5px solid #F5E03A', color: '#F5E03A', fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: '13px', letterSpacing: '3px', textTransform: 'uppercase', padding: '16px 32px', textDecoration: 'none', display: 'inline-block' }}>
+                <Link href="/services" className="btn-outline" style={{ border: '1.5px solid #F5E03A', color: '#F5E03A', fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: '15px', letterSpacing: '3px', textTransform: 'uppercase', padding: '16px 32px', textDecoration: 'none', display: 'inline-block' }}>
                   Explore Our Work
                 </Link>
               </div>
@@ -112,7 +112,7 @@ export default function Home() {
           <p style={{ fontFamily: "'Barlow', sans-serif", fontWeight: 300, fontSize: '17px', color: '#C4C4D4', lineHeight: 1.8, marginBottom: '48px' }}>
             At Amped Web Solutions, we fix that. Fast.
           </p>
-          <Link href="/contact" className="btn-primary" style={{ background: '#F5E03A', color: '#080810', fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: '13px', letterSpacing: '3px', textTransform: 'uppercase', padding: '16px 40px', textDecoration: 'none', display: 'inline-block' }}>
+          <Link href="/contact" className="btn-primary" style={{ background: '#F5E03A', color: '#080810', fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: '15px', letterSpacing: '3px', textTransform: 'uppercase', padding: '16px 40px', textDecoration: 'none', display: 'inline-block' }}>
             See How It Works
           </Link>
         </div>
@@ -150,7 +150,7 @@ export default function Home() {
             <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 300, fontSize: '16px', letterSpacing: '3px', textTransform: 'uppercase', color: '#8A8A9A', marginBottom: '32px' }}>
               No templates. No guesswork. No surprises.
             </p>
-            <Link href="/contact" className="btn-primary" style={{ background: '#F5E03A', color: '#080810', fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: '13px', letterSpacing: '3px', textTransform: 'uppercase', padding: '16px 40px', textDecoration: 'none', display: 'inline-block' }}>
+            <Link href="/contact" className="btn-primary" style={{ background: '#F5E03A', color: '#080810', fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: '15px', letterSpacing: '3px', textTransform: 'uppercase', padding: '16px 40px', textDecoration: 'none', display: 'inline-block' }}>
               Book Your Discovery Call
             </Link>
           </div>
